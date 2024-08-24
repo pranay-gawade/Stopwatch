@@ -1,0 +1,9 @@
+ext {
+  applicationId = "com.arsvechkarev.timerxexample"
+  compileSdkVersion = 33
+  minSdkVersion = 19
+  targetSdkVersion = 33
+  versionCode = 1
+  versionName = "1.0"
+  testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+}

@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+android {
+  def configs = rootProject.ext
+
+  compileSdkVersion configs.compileSdkVersion
+  defaultConfig {
+    applicationId configs.applicationId
+    minSdkVersion configs.minSdkVersion
+    targetSdkVersion configs.targetSdkVersion
+    versionCode configs.versionCode
+    versionName configs.versionName
+    testInstrumentationRunner configs.testInstrumentationRunner
+  }
+
+  compileOptions {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+  }
+}
+
+dependencies {
+  implementation project(':timerx-core')
+
+  debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+  implementation 'androidx.appcompat:appcompat:1.2.0'
+  implementation 'com.google.android.material:material:1.0.0'
+  implementation "androidx.core:core-ktx:1.0.0"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+repositories {
+  mavenCentral()
+}
